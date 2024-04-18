@@ -7,8 +7,8 @@ int main(){
     printf("Ingresar segundo valor: ");
     scanf("%d",&b);
     c=a+b;
-    c=a-b;
     printf("resultado de la suma: %d\n",c);
+    c=a-b;
     printf("resultado de la resta: %d\n",c);
     return 0;
 }
