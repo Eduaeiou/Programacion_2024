@@ -10,5 +10,7 @@ int main(){
     printf("resultado de la suma: %d\n",c);
     c=a-b;
     printf("resultado de la resta: %d\n",c);
+    c=a*b;
+    printf("resultado de la multiplicacion: %d\n",c);
     return 0;
 }
