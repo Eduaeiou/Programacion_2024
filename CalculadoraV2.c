@@ -10,6 +10,7 @@ int main(){
     Esc("Ingresar valor para b: ");L("%d",&b);
     c=a+b;Esc("%d+%d=%d\n",a,b,c);
     c=a-b;Esc("%d-%d=%d\n",a,b,c);
+    c=a*b;Esc("%d*%d=%d\n",a,b,c);
 
     return 0;
 }
