@@ -8,7 +8,8 @@ int edad();
 
 int main(){
 
-    int fecha, fechanac, fechaact;
+
+    int fecha=31129999, fechanac, fechaact, edad;
     Escribir("Ingresar fecha de nacimiento en un entero de 8 cifras para la fecha: ");
     Leer("%d",&fecha);
 
@@ -25,8 +26,8 @@ int main(){
 
     int edadaprox;
     edadaprox = fechaact-fechanac;
-
     Escribir("");
+
 
     //Escribir("Ingresar fecha actual en un entero");
 
