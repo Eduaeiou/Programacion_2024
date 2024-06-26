@@ -7,10 +7,11 @@ int main(){
     
     int opc;
 
-    printf("Escribir numero del ejercicio. Según: \n");
-    printf("\t5. Dados dos valores para a y b, los intercambia \n");
-    printf("\t6. Un valor en Km y expresado en metros.\n");
-    printf("Punto: ");
+    printf("Enter the exercise number. According to: \n");
+    printf("\t5. Given two numbers a and b, exchange them. \n");
+    printf("\t6. Change from km to m \n");
+    printf("0. Exit");
+    printf("Exercise: ");
     scanf("%d",&opc); system("clear");
 
     switch (opc)
@@ -18,6 +19,9 @@ int main(){
         case 5: Punto5();
             break;
         case 6: Punto6();
+            break;
+        case 0:
+            break;
         default:
             break;
     }
@@ -29,10 +33,10 @@ void Punto5(){
 
     int a,b,aux;
 
-    printf("Ingresar un valor para a: "); scanf("%d",&a);
-    printf("Ingresar un valor para b: "); scanf("%d",&b);
+    printf("Enter a numer for a: "); scanf("%d",&a);
+    printf("Enter a numer for b: "); scanf("%d",&b);
     aux=a; a=b; b=aux;
-    printf("Ahora los valores son: \n");
+    printf("Now the numbers are: \n");
     printf("\ta=%d \t b=%d\n",a,b);
 }
 //6. Ingresar por teclado un valor en Km y mostrarlo expresado en metros.
@@ -40,9 +44,9 @@ void Punto6(){
 
     float metros,km;
 
-    printf("Ingresar el valor en km: "); scanf("%f",&km);
+    printf("Enter a number in km: "); scanf("%f",&km);
     metros=km*m;
-    printf("Es igual a %.2fm",metros);
+    printf("Is iqual to %.2fm",metros);
 }
 //7. Ingresar dos números desde el teclado y mostrar: la suma, la resta, la multiplicación y la
 //división (para esta última suponer divisor distinto de cero).
