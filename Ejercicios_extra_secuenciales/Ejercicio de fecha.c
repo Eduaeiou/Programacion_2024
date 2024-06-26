@@ -8,7 +8,7 @@ int edad();
 
 int main(){
 
-    int fecha=31129999, fechanac, fechaact;
+    int fecha, fechanac, fechaact;
     Escribir("Ingresar fecha de nacimiento en un entero de 8 cifras para la fecha: ");
     Leer("%d",&fecha);
 
@@ -23,9 +23,10 @@ int main(){
 
     Escribir("Es igual a %d dias\n\n",fechaact);
 
-    edad=fechaact-fechanac;
+    int edadaprox;
+    edadaprox = fechaact-fechanac;
 
-    Escribir("")
+    Escribir("");
 
     //Escribir("Ingresar fecha actual en un entero");
 
@@ -38,10 +39,8 @@ int calendario(int fecha)
     mes=(fecha/10000)%100;
     dia=fecha/pow(10,6);
 
-    Escribir("Anios %d\t",anios);
-    Escribir("Mes %d\t\t",mes);
-    Escribir("Dia %d\t\t",dia);
-
+    Escribir("Fecha de nacimiento: %d del %d de %d\n",dia,mes,anios);
+    
     edadaux= edad(dia, mes, anios);
 
     return edadaux;
