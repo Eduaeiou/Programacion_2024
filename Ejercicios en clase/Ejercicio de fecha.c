@@ -23,9 +23,9 @@ int main(){
 
     Escribir("Es igual a %d dias\n\n",fechaact);
 
-    edad=fechaact-fechanac;
+    //edad=fechaact-fechanac; //sacar barras para saber que hace
 
-    Escribir("")
+    Escribir("");
 
     //Escribir("Ingresar fecha actual en un entero");
 
