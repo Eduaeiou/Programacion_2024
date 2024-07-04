@@ -9,29 +9,30 @@ int main() {
         printf("Ingrese un numero (o presione Enter sin escribir nada para salir): ");
         fgets(input, 100, stdin);
 
-        // Elimina el salto de línea al final de la entrada
+        // Elimina el salto de lï¿½nea al final de la entrada
         input[strcspn(input, "\n")] = 0;
 
-        // Si la entrada está vacía (el usuario presionó Enter sin escribir nada)
+        // Si la entrada estï¿½ vacï¿½a (el usuario presionï¿½ Enter sin escribir nada)
         if (strlen(input) == 0) {
             empty_count++;
-            printf("Entrada vacía detectada. Contador de entradas vacías: %d\n", empty_count);
-            // Aquí puedes decidir si deseas continuar o terminar el programa.
-            // Para este ejemplo, vamos a terminar el programa después de contar una entrada vacía.
-            break;
+            printf("Entrada vacï¿½a detectada. Contador de entradas vacï¿½as: %d\n", empty_count);
+            // Aquï¿½ puedes decidir si deseas continuar o terminar el programa.
+            // Para este ejemplo, vamos a terminar el programa despuï¿½s de contar una entrada vacï¿½a.
+            //>>>>>>>>>>>>>>>         break;
+            //La instrucciÃ³n break finaliza la ejecuciÃ³n de la instrucciÃ³n 
         } else {
-            // Convertir la entrada a un número (opcional, dependiendo de lo que quieras hacer con los números)
+            // Convertir la entrada a un nï¿½mero (opcional, dependiendo de lo que quieras hacer con los nï¿½meros)
 
             if (sscanf(input, "%d", &number) == 1) {
-                printf("Número ingresado: %d\n", number);
+                printf("Nï¿½mero ingresado: %d\n", number);
                 aux=number+aux;
             } else {
-                printf("Entrada no válida. Por favor, ingrese un número.\n");
+                printf("Entrada no vï¿½lida. Por favor, ingrese un nï¿½mero.\n");
             }
         }
     }
 
-    printf("Total de entradas vacías: %d\n", empty_count);
-    printf("Numero total: %d\n", aux);
+    printf("Total de entradas vacï¿½as: %d\n", empty_count);
+    printf("Numero total: %d\n\n", aux);
     return 0;
 }
