@@ -8,29 +8,30 @@ void main(){
     char ch;char c_precio[100];
 
     do{printf("Ingresar precio del producto: $");
-    fgets(c_precio,100,stdin);//fgets(nombre_cadena, numero_caracteres, FILE);  la palabra “stdin” cuyo significado es “standard input”.
-    c_precio[strcspn(c_precio, "\n")] = 0; // Elimina el salto de línea al final de la entrada
+    fgets(c_precio,100,stdin);//fgets(nombre_cadena, numero_caracteres, FILE);  la palabra ï¿½stdinï¿½ cuyo significado es ï¿½standard inputï¿½.
+    c_precio[strcspn(c_precio, "\n")] = 0; // Elimina el salto de lï¿½nea al final de la entrada
 
-    //Si la longitud de la entrada (strlen()) es 0, significa que el usuario presionó Enter sin escribir nada
+    //Si la longitud de la entrada (strlen()) es 0, significa que el usuario presionï¿½ Enter sin escribir nada
     if(strlen(c_precio) == 0){
-        i++;printf("i %d",i);
-        break;
+        i++;//printf("i %d\n",i);
+        if(i == 3){
+                printf("Deseas seguir operando? S/N\n");scanf("%c",&ch);
+                if (ch == 'S' || ch == 's'){
+                    i=0; fflush(stdout);
+                } else break;
+                }
+        //La instrucciÃ³n break finaliza la ejecuciÃ³n de la instrucciÃ³n
+        //break;
     } else {
-        //sscanf para intentar convertir la entrada a un número entero.
+        //sscanf para intentar convertir la entrada a un nï¿½mero entero.
         if (sscanf(c_precio, "%f", &f_precio) == 1){
             a_precio=a_precio+f_precio;
-        } else {
-            if(i == 3){
-                printf("Deseas seguir operando? S/N");scanf("%c",&ch);
-                if (ch == 'S' || ch == 's'){
-                    i=0;
-                } //else {i=3;}
-                }
+        } else { printf("Entrada no valida\n\n");
             }
         }
 
     }while(i!=3);
-    printf("Total $%.2f",f_precio);
+    printf("Total $%.2f",a_precio);
 
 
 
