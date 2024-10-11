@@ -22,7 +22,8 @@ int main(){
         switch (opc)
     {
         case 5: Punto5(); 
-            printf("Press any key to continue... "); sleep(3); getchar(); exit = false; 
+            printf("Press any key to continue... "); //sleep(3); 
+            getchar(); exit = false; 
             break;
         case 6: Punto6();
             break;
