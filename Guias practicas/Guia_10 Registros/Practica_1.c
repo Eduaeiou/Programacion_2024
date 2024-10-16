@@ -1,14 +1,15 @@
 #include <stdio.h>
-#include "string.h"
+#include <string.h>
+#include "stdlib.h" // Para system()
 //#include <windows.h>
 #define n 2
 #define _long 50
 
-int cat_emp(char tip_cat[], char letra_m[], char letra_M[])
+int cat_emp(char tip_cat, char letra_m, char letra_M)
 {
-    int acumulador;
+    int acumulador = 0;
 
-    if (strcmp(tip_cat,letra_m) == 0 || strcmp(tip_cat,letra_M) == 0)
+    if (tip_cat == letra_m || tip_cat == letra_M)
     {
         acumulador +=1;
     }
@@ -36,8 +37,8 @@ typedef struct
 int main()
 {
     planilla empleado[n];
-    float promedio;
-    int cat_a, cat_b, cat_c;
+    float promedio = 0.0;
+    int cat_a = 0, cat_b = 0, cat_c = 0;
 
     printf("*******   EMPLEADO   *******");
     for (int i = 0; i < n; i++)
@@ -45,20 +46,27 @@ int main()
         printf("\nREGISTRO Nro.: %d",i+1);
         printf("\nNOMBRE Y APELLIDO: ");
         fgets(empleado[i].nom_ape,_long,stdin);
+        empleado[i].nom_ape[strcspn(empleado[i].nom_ape, "\n")] = 0; // Elimina el salto de línea
+
         printf("EDAD: ");
         scanf("%d",&empleado[i].edad);
-        getchar();
+        getchar(); //Limpiar el buffer de entrada
+
         printf("CATEGORIA (A-B-C): ");
         scanf("%c",&empleado[i].categoria);
-        cat_a = (empleado[i].categoria,'a','A');
-        cat_b = (empleado[i].categoria,'b','B');
-        cat_c = (empleado[i].categoria,'c','C');
+        getchar(); //Limpiar el buffer de entrada
+
+        cat_a += cat_emp(empleado[i].categoria,'a','A');
+        cat_b += cat_emp(empleado[i].categoria,'b','B');
+        cat_c += cat_emp(empleado[i].categoria,'c','C');
+
         printf("SUELDO: ");
         scanf("%f",&empleado[i].sueldo);
+        getchar(); //Limpiar el buffer de entrada
+        
         promedio += empleado[i].sueldo;
         //system("cls"); //Windows
         system("clear"); //Linux
-        getchar();
     }
 
     printf("LISTA DE EMPLEADOS: ");
@@ -67,16 +75,16 @@ int main()
         printf("\nNom. y ape.: %s",empleado[i].nom_ape);
         printf("Edad: %d",empleado[i].edad);
         printf("\nCtg.: %c",empleado[i].categoria);
-        printf("\nSld.: %c%.2f\n",36,empleado[i].sueldo);
+        printf("\nSld.: $%.2f\n",empleado[i].sueldo);
     }
     
     printf("\nPROMEDIO DE SUELDOS PAGADOS");
-    printf("\nClc: %c%.2f",36,promedio);
+    printf("\nClc: $%.2f",promedio/n);
 
     printf("\nCANTIDAD DE EMPLEADOS SEGUN CATEGORIA: ");
-    ctd_cat(65,cat_a);
-    ctd_cat(66,cat_b);
-    ctd_cat(67,cat_c);
+    ctd_cat(cat_a,'A');
+    ctd_cat(cat_b,'B');
+    ctd_cat(cat_c,'C');
 
     return 0;
 }
